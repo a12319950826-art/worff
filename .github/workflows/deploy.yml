@@ -4,7 +4,6 @@ on:
   push:
     branches: [main]
 
-# 添加权限配置
 permissions:
   contents: write
 
@@ -14,14 +13,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
+        # 移除 cache: 'npm' 这一行
 
       - name: Install dependencies
         run: npm install
@@ -34,5 +31,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
