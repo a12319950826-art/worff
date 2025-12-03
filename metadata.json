@@ -1,0 +1,5 @@
+{
+  "name": "Context Vocabulary Booster",
+  "description": "A specialized SRS learning tool that imports mixed text/vocabulary files, providing context-aware reviews with specific interval training.",
+  "requestFramePermissions": []
+}
